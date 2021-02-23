@@ -76,7 +76,7 @@ class App extends Component {
     // joining the array back to a string of translated words
     // no need to change this variable
     let translatedWords = translatedWordsArray.join(" ")
-    console.log("translatedWords:", translatedWords)
+    console.log("translatedWords this one:", translatedWords)
 
     // the setState method will take your information from "translatedWords" and update the state object that is displayed to the user
     // no need to change this method
