@@ -27,18 +27,49 @@ class App extends Component {
       // ACTION ITEM: use "currentWord" as a starting point for your code
       console.log("currentWord:", currentWord)
 
-      let vowelsArray = currentWord.split("").filter(vowel => {
+      let firstVowel = currentWord.split("").map(vowel => {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
-      console.log("vowelsArray:", vowelsArray)
+      console.log("is it a vowel:", firstVowel)
+      // firstVowel is an array of each word in boolean form showing true for vowel and false for consonant
+
+      let indexOfVowel = firstVowel.indexOf(true);
+      console.log("index of current vowel", indexOfVowel)
+
+      let splitWord = currentWord.split("")
+      // make a variable for the currentWord we will be working with
+      // console.log("translatedWordsArray: ", translatedWordsArray)
+
+
+      if(indexOfVowel === 0){
+        // if the word begins with a vowel 
+        var pigWord = splitWord.join("") + "way";
+      } else if (indexOfVowel !== 0){
+        // if the word begins with a consonant
+        let endOfWord = splitWord.splice(indexOfVowel);
+        let begOfWord = splitWord
+        pigWord = endOfWord.join("") + begOfWord.join("") + "ay"
+      }
+
 
       // your code here!
+      // Rules of pigLatin: 
+      // 1. find first vowel
+      // 2. words that begin with consonants identify first vowel (index)
+      // 3. .shift() the letter before the vowel to the end
+      // 4. add "ay" to the end
+      // 5. When words being with 
+      
+      // some pseudo code:
+      // once the vowel is found
+      // slice the current word at the index of the found vowel and use substring or slice
+      // maybe .push() if we use a regular function and .map() if we use a higher-order-function 
 
       // Remember: console.log is your friend :)
 
 
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
-      return currentWord
+      return pigWord
     })
 
 
