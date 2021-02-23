@@ -19,9 +19,9 @@ class App extends Component {
   myPigLatinCodeHere = () => {
     // the variable "userInput" will contain the text input from the user modified into an array of words
     // no need to change this variable
-    let userInput = this.state.phrase.split(" ")
+    let userInput = this.state.phrase.toLowerCase().split(" ")
     console.log("userInput:", userInput)
-
+    
     // now that we have an array of words, we can map over the array and access each word
     let translatedWordsArray = userInput.map(currentWord => {
       // ACTION ITEM: use "currentWord" as a starting point for your code
@@ -40,16 +40,34 @@ class App extends Component {
       // make a variable for the currentWord we will be working with
       // console.log("translatedWordsArray: ", translatedWordsArray)
 
-
-      if(indexOfVowel === 0){
+      
+      if (currentWord.includes("a","e","i","o","u") === false && currentWord.includes("y") === true){
+        let yIndex = currentWord.indexOf("y");
+        let endOfWord = splitWord.splice(yIndex);
+        var pigWord = endOfWord.join("") + splitWord.join("") + "ay"
+    
+      } else if (currentWord.includes("qu")){
+        let quIndex = currentWord.indexOf("qu");
+        //console.log(quIndex);
+        let indexToSplit = quIndex + 2
+        let quSplitWord = currentWord.split("");
+        let endOfWord = quSplitWord.splice(indexToSplit);
+        let begOfWord = quSplitWord
+        pigWord = endOfWord.join("") + begOfWord.join("") + "ay"
+      } else if(indexOfVowel === 0){
         // if the word begins with a vowel 
-        var pigWord = splitWord.join("") + "way";
+        pigWord = splitWord.join("") + "way";
       } else if (indexOfVowel !== 0){
         // if the word begins with a consonant
         let endOfWord = splitWord.splice(indexOfVowel);
         let begOfWord = splitWord
         pigWord = endOfWord.join("") + begOfWord.join("") + "ay"
       }
+
+
+      //use .includes to find an instance where there is string of "qu" in a word
+      //if the string contains "qu" store index of qu into var
+      //
 
 
       // your code here!
@@ -71,7 +89,6 @@ class App extends Component {
       // ACTION ITEM: change the value of currentWord to the name of whatever variable you made containing your Pig Latin'd word
       return pigWord
     })
-
 
     // joining the array back to a string of translated words
     // no need to change this variable
