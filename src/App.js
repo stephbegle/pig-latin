@@ -8,7 +8,7 @@ class App extends Component {
     this.state = {
       // "phrase" is the text entered by the user - right now there are some test words hard coded to make the process of testing your code a bit faster and easier
       // ACTION ITEM: when you are ready for your full user experience, delete the test words so phrase is assigned an empty string
-      phrase: "alpha through yummy squeal queen fry",
+      phrase: "",
       // "phraseTranslated" is what the user will see appear on the page as Pig Latin, it starts as the preset message and updates when your user clicks the "submit" button
       phraseTranslated: "This is where your translated sentence will appear."
     }
@@ -64,25 +64,6 @@ class App extends Component {
         pigWord = endOfWord.join("") + begOfWord.join("") + "ay"
       }
 
-
-      //use .includes to find an instance where there is string of "qu" in a word
-      //if the string contains "qu" store index of qu into var
-      //
-
-
-      // your code here!
-      // Rules of pigLatin: 
-      // 1. find first vowel
-      // 2. words that begin with consonants identify first vowel (index)
-      // 3. .shift() the letter before the vowel to the end
-      // 4. add "ay" to the end
-      // 5. When words being with 
-      
-      // some pseudo code:
-      // once the vowel is found
-      // slice the current word at the index of the found vowel and use substring or slice
-      // maybe .push() if we use a regular function and .map() if we use a higher-order-function 
-
       // Remember: console.log is your friend :)
 
 
@@ -104,7 +85,7 @@ class App extends Component {
     // this method restarts the game by setting the original state
     // ACTION ITEM: when you are ready for your full user experience, delete the test words in phrase so that is assigned an empty string
     this.setState({
-      phrase: "alpha through yummy squeal queen fry",
+      phrase: "",
       phraseTranslated: "This is where your translated sentence will appear."
     })
   }
@@ -127,12 +108,13 @@ class App extends Component {
       <>
         <h1>Pig Latin Translator</h1>
         <img
-          src="https://lh3.googleusercontent.com/QvvsRY5ShwDNEouVMK8_z7QCwS3grkgd4mzZOlom23Hurralk54ObvsyEMM8ZSNR5pEFBeBMzltzEEcgi2llYJnhXTuXClN3njmMjtw3vgn8Go5jr40fHMNzfI64eYRrnHbZUutxCA=w2400"
+          src="http://cdn.shopify.com/s/files/1/1061/1924/products/Pig_Nose_Emoji_grande.png?v=1571606065"
           alt="pig with butcher cut names in pig latin"
           id="butcherPig"
         />
         <div id="box">
-          <h4>Enter phrase to be translated:</h4>
+          <h4>You want me to talk piggy to you? Oink Oink ;) 
+            <br></br>Type in something to translate:</h4>
           {/* user input field - every DOM event that happens in the input will call the handleChange method and update state */}
           <input
             type="text"
@@ -145,8 +127,10 @@ class App extends Component {
           <button onClick={ this.setUpPreventDefault }>Submit</button>
           <button onClick={ this.restartGame }>Clear</button>
         </div>
+        <div id="box2">
         <p>{ this.state.phraseTranslated }</p>
-        <footer>Coded by ~your name here~</footer>
+        </div>
+        <footer>Coded by Nick and Steph :) </footer>
       </>
     )
   }

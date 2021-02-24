@@ -2,16 +2,23 @@ body {
   margin: 2em;
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
+  background-image: url("https://thumbs.dreamstime.com/b/year-pig-seamless-pattern-background-wallpaper-eps-132991195.jpg");
 }
 
 h1 {
   font-size: 4em;
 }
 
+p {
+  font-size: 30px;
+}
+
 button {
   margin: 1em;
-  border-radius: .5em;
+  border-radius: 5em;
   padding: 1em;
+  background-color: rgb(230, 32, 164);
+  font-size: 20px;
 }
 
 footer {
@@ -34,12 +41,18 @@ input {
 }
 
 #box{
-  background-color: #606060;
+  background-color: rgb(194, 82, 119);
   color: #fff;
-  border-radius: .5em;
+  border-radius: 10em;
   padding: 1rem;
 }
 
+#box2{
+  background-color:rgb(194, 82, 119);
+  color: #fff;
+  border-radius: 2em;
+  padding: .0001rem;
+}
 
 @media only screen and (max-width: 650px) {
   #inputPhrase{
