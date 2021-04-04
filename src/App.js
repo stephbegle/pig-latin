@@ -13,6 +13,7 @@ class App extends Component {
       phraseTranslated: "This is where your translated sentence will appear."
     }
   }
+  // random comment
 
   // The "myPigLatinCodeHere" function is where you will put your logic to convert the sentence entered by the user to Pig Latin
 
@@ -42,11 +43,13 @@ class App extends Component {
 
       
       if (currentWord.includes("a","e","i","o","u") === false && currentWord.includes("y") === true){
+
         let yIndex = currentWord.indexOf("y");
         let endOfWord = splitWord.splice(yIndex);
         var pigWord = endOfWord.join("") + splitWord.join("") + "ay"
     
       } else if (currentWord.includes("qu")){
+
         let quIndex = currentWord.indexOf("qu");
         //console.log(quIndex);
         let indexToSplit = quIndex + 2
@@ -54,9 +57,11 @@ class App extends Component {
         let endOfWord = quSplitWord.splice(indexToSplit);
         let begOfWord = quSplitWord
         pigWord = endOfWord.join("") + begOfWord.join("") + "ay"
+
       } else if(indexOfVowel === 0){
         // if the word begins with a vowel 
         pigWord = splitWord.join("") + "way";
+
       } else if (indexOfVowel !== 0){
         // if the word begins with a consonant
         let endOfWord = splitWord.splice(indexOfVowel);
